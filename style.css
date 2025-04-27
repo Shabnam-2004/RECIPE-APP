@@ -107,7 +107,7 @@ form button[type="submit"]:hover,
 }
 
 .recipe h3 {
-    font-size: 22px;
+    font-size: 18px;
     margin: 10px 0 5px 0;
     color: white;
 }
@@ -162,6 +162,7 @@ form button[type="submit"]:hover,
     text-align: center;
     text-transform: uppercase;
     text-decoration: underline;
+    
 }
 
 .ingredientList ul{
