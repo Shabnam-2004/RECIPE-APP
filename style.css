@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: black;
+}
+
+header nav {
+    background-color: #f6f6f6;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+header nav h1 {
+    letter-spacing: 1px;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+header nav form {
+    justify-content: center;
+    display: flex;
+    width: 50%;
+}
+
+form input[type="text"],
+form button[type="submit"] {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+form input[type="text"] {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+form button[type="submit"] {
+    background-color:#c1018a;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    border: none;
+    color: white;
+    opacity: 0.8;
+
+}
+
+form button[type="submit"]:hover,
+.recipe button:hover, .recipe-close-btn:hover {
+    opacity: 1;
+
+}
+
+/* Main Section */
+
+.recipe-container {
+    text-align: center;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    width: 80%;
+    padding: 20px;
+    place-items: center;
+    
+}
+
+.recipe {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(78, 73, 73, 0.1),
+                -5px -5px 10px rgba(34, 34, 34, 0.5);
+    cursor: pointer;
+    max-width: 350px;
+    transition: transform 0.3s ease;
+    background: #C1018A;
+    background: linear-gradient(180deg, rgba(193, 1, 138, 1) 0%, rgba(25, 0, 66, 1) 100%);
+
+}
+
+.recipe:hover{
+    transform:scale(1.1)
+}
+
+.recipe:hover {
+    transform: scale(1.02);
+}
+
+.recipe img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.recipe h3 {
+    font-size: 22px;
+    margin: 10px 0 5px 0;
+    color: white;
+}
+
+.recipe p {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin: 5px 0;
+    color: white;
+}
+
+.recipe span {
+    font-weight: 600;
+    color: white;
+}
+
+.recipe button {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #c1018a;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    margin: 18px auto;
+    padding: 10px;
+    width: 80%;
+}
+
+/* Recipe Details*/
+.recipe-details{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    background-color: #f6f6f6;
+    border-radius: 12px;
+    width: 40%;
+    height: 60%;
+    font-size: 20px;
+    transition: all 0.5s ease-in-out;
+    overflow-y: scroll;
+}
+
+.recipe-details-content{
+    padding: 30px;
+}
+
+.recipeName{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.ingredientList ul{
+    margin-top: 10px;
+    margin-left: -20px;
+}
+
+.recipeInstructions p{
+    line-height: 30px;
+    white-space: pre-line;
+    text-align: justify;
+}
+
+.recipeName, .ingredientList, .recipeInstructions{
+    margin-bottom: 20px;
+   
+}
+
+.recipe-close-btn{
+    border:none;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #c1018a;
+    color:#fff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+.recipe-details::-webkit-scrollbar{
+    width: 10px;
+}
+
+.recipe-details::-webkit-scrollbar-thumb{
+    background-color: #b5b5ba;
+    border-radius: 16px;
+    --webkit-border-radius:16px;
+}
+
+/* Responsive Code */
+
+@media screen and (max-width: 600px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header nav form {
+        width: 80%;
+        margin-top: 20px;
+    }
+}
